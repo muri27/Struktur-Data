@@ -1,0 +1,44 @@
+import statistics
+
+#2
+data = {"Nama" : "Hilmy", "Prodi" : "D4 TRPL", "Alamat" : {"Desa" : "Kedawung",
+                                                             "Kecamatan" : "Pejagoan",
+                                                             "Kabupaten" : "Kebumen",
+                                                             "Provinsi" : "Jawa Tengah"}}
+print("Nama : ", data["Nama"])
+print("Prodi : ", data["Prodi"])
+print("Alamat : ", data["Alamat"]["Desa"], ",", data["Alamat"]["Kecamatan"],",", data["Alamat"]["Kabupaten"],",", \
+      data["Alamat"]["Provinsi"])
+
+print()
+
+#3
+
+penilaian = {"materi1" : 80, "materi2" : 87, "materi3" : [66,75,65], "materi4" : {"diskusi" : 90, "kuis" : 70}}
+
+rumus = 0.2 * penilaian["materi1"]  + 0.2 * penilaian["materi2"] + 0.3 * statistics.mean(penilaian["materi3"]) \
++ 0.3 * ((penilaian["materi4"]["diskusi"] + penilaian["materi4"]["kuis"])/2) 
+
+print("Nilai : ", rumus)
+
+print()
+
+#1
+mhs = {"nama" : "Adi", "umur" : 20, "mk" : {"Matematika Diskrit" : ["A", 2], "Pemrograman" : ["B", 3], "Struktur Data" : ["B", 2]}}
+
+#menampilkan mk
+matkul = []
+for mk in mhs["mk"].keys():
+    matkul.append(mk)
+print("Mata Kuliah yang Diambil : ", ", ". join(matkul))
+
+#menampilkan mk dengan nilai dari mk yg diambil
+print(matkul[0], ":", mhs["mk"]["Matematika Diskrit"])
+print(matkul[1], ":", mhs["mk"]["Pemrograman"])
+print(matkul[2], ":", mhs["mk"]["Struktur Data"])
+
+
+#menampilkan ipk
+ipk = (mhs["mk"]["Matematika Diskrit"][1]*4 +  mhs["mk"]["Pemrograman"][1]*3 +  mhs["mk"]["Struktur Data"][1]*3) \
+ / (mhs["mk"]["Matematika Diskrit"][1] + mhs["mk"]["Pemrograman"][1] + mhs["mk"]["Struktur Data"][1])
+print("IPK : ", round(ipk,2))
