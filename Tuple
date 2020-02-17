@@ -10,9 +10,9 @@ for mk in mhs["mk"].keys():
 print("Mata Kuliah yang Diambil : ", ", ". join(matkul))
 
 #menampilkan mk dengan nilai dari mk yg diambil
-print(matkul[0], ":", mhs["mk"]["Matematika Diskrit"])
-print(matkul[1], ":", mhs["mk"]["Pemrograman"])
-print(matkul[2], ":", mhs["mk"]["Struktur Data"])
+print(matkul[0], ":", mhs["mk"]["Matematika Diskrit"][0])
+print(matkul[1], ":", mhs["mk"]["Pemrograman"][0])
+print(matkul[2], ":", mhs["mk"]["Struktur Data"][0])
 
 
 #menampilkan ipk
