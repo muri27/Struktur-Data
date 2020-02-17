@@ -28,7 +28,7 @@ data = {"Nama" : "Hilmy", "Prodi" : "D4 TRPL", "Alamat" : {"Desa" : "Kedawung",
                                                              "Provinsi" : "Jawa Tengah"}}
 print("Nama : ", data["Nama"])
 print("Prodi : ", data["Prodi"])
-print("Alamat : ", data["Alamat"]["Desa"], ",", data["Alamat"]["Kecamatan"],",", data["Alamat"]["Kabupaten"],",", \
+print("Alamat : ", data["Alamat"]["Desa"] + ",", data["Alamat"]["Kecamatan"] +",", data["Alamat"]["Kabupaten"] + ",", \
       data["Alamat"]["Provinsi"])
 print()
 
