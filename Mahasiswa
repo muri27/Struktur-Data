@@ -1,0 +1,10 @@
+mahasiswa = int(input())
+nilai = list(map(int, input().split()))
+listn = []
+
+for i in range(mahasiswa):
+    if nilai[i] >= 0:
+        listn.insert(0, nilai[i])
+
+for i in range(len(listn)):
+    print(listn[i])
