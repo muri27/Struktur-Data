@@ -1,0 +1,9 @@
+n = int(input())
+m = 5
+if n == 0:
+    print(5)
+else:
+    for i in range(n):
+        m = m*2
+    print(m)
+        
