@@ -1,0 +1,9 @@
+absen = list(map(int, input().split()))
+orang = 0
+
+for i in range(len(absen)):
+    if absen[i] > 0:
+        orang += 1
+    else:
+        break
+print(orang)
