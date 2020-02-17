@@ -1,3 +1,4 @@
+1\
 absen = list(map(int, input().split()))
 orang = 0
 
@@ -7,3 +8,14 @@ for i in range(len(absen)):
     else:
         break
 print(orang)
+
+2/
+absen = list(map(int, input().split()))
+listx = []
+
+for i in range(len(absen)):
+    if absen[i] > 0:
+        listx.append(absen[i])
+
+for i in range (len(listx)):
+    print(listx[i])
