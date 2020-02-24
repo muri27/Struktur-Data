@@ -1,0 +1,27 @@
+tumpukan=[]
+
+def push(dataBaru):
+    tumpukan.append(dataBaru)
+    
+def pop():
+    tumpukan.pop()
+    
+def isEmpty():
+    #jika tumpukan kosaong maka True
+    #jika ada isiny maka False
+    if len(tumpukan) == 0:
+        return True
+    else:
+        return False
+
+#menampilkan dari list/tumpukan
+def printTumpukan():
+    print(tumpukan)
+
+
+
+push(3)
+push(0)
+push(2)
+pop()
+printTumpukan()
