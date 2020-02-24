@@ -1,0 +1,11 @@
+nim = input()
+pertanyaan = input()
+
+if pertanyaan == "angkatan":
+    print(nim[0]+nim[1])
+elif pertanyaan == "NIU":
+    print(nim[3]+nim[4]+nim[5]+nim[6]+nim[7]+nim[8])
+elif pertanyaan == "fakultas":
+    print(nim[10]+nim[11])
+elif pertanyaan == "NIF":
+    print(nim[13] + nim[14] + nim[15] + nim[16] + nim[17])
