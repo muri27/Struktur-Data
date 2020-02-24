@@ -1,0 +1,39 @@
+def createNewStack():
+    s = []
+    return s
+
+def push(StackApa, elemen):
+    StackApa.append(elemen)
+
+def isEmpty(StackApa):
+    #jika tumpukan kosaong maka True
+    #jika ada isiny maka False
+    if len(StackApa) == 0:
+        return True
+    else:
+        return False
+    
+def pop(StackApa):
+    if isEmpty(StackApa):
+        return None
+    else:
+        return StackApa.pop()
+
+def clear(StackApa):
+    StackApa.clear()
+        
+def peek(StackApa):
+    if len(StackApa) == 0:
+        return None
+    else:
+        return StackApa[-1]
+    
+def printStack (StackApa):
+    print(StackApa)
+    
+
+x = createNewStack()
+
+clear(x)
+peek(x)
+printStack(x)
