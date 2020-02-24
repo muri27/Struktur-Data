@@ -1,0 +1,24 @@
+n = int(input())
+buku = []
+
+def pop():
+    buku.pop()
+
+for i in range(n):
+    aksi = input().split()
+    if aksi[0] == "T":
+        buku.append(aksi[1])
+        buku.append(aksi[2])
+    elif aksi[0] == "A":
+        pop()
+        pop()
+
+buku.reverse()
+banyak = len(buku)
+x = 0
+y = 1
+while y < banyak:
+    c = buku[y] + " " + buku[x]
+    print(c, end ="")
+    print()
+    x += 2
