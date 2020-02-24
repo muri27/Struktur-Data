@@ -1,0 +1,11 @@
+n = input()
+m = input()
+x = input()
+
+for i in range(len(x)):
+    if x[i] == "1":
+        print(m[i], end="")
+    elif x[i] == "0":
+        print(n[i], end="")
+    
+print()
