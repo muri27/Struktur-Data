@@ -1,0 +1,38 @@
+
+def push(paku, dataBaru):
+    paku.append(dataBaru)
+    
+def isEmpty(paku):
+    if len(paku) == 0:
+        return True
+    else:
+        return False
+    
+def pop(paku):
+    if isEmpty(paku):
+        return None
+    else:
+        return paku.pop() #atau palingBelakang = paku.pop() terus return palingBelakang
+
+def printTumpukan(paku):
+    print(paku)
+
+
+paku1 = ["b1", "b2", "b3"]
+paku2 = []
+paku3 = []
+
+#return untuk memanggil nilai dari dibawa pada fungsi def pop
+dibawa = pop(paku2)
+push(paku3,dibawa)
+
+dibawa = pop(paku1)
+push(paku2,dibawa)
+
+status = isEmpty(paku2)
+print(status)
+
+paku2.reverse()
+printTumpukan(paku1)
+printTumpukan(paku2)
+printTumpukan(paku3)
