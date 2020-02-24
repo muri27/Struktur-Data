@@ -22,3 +22,4 @@ while y < banyak:
     print(c, end ="")
     print()
     x += 2
+    y += 2
