@@ -23,17 +23,22 @@ def clear(StackApa):
     StackApa.clear()
         
 def peek(StackApa):
-    if len(StackApa) == 0:
-        return None
-    else:
-        return StackApa[-1]
+    return StackApa[-1]
     
 def printStack (StackApa):
     print(StackApa)
     
+stack = createNewStack()
+for i in range(5):
+    data = input()
+    push(stack, data)
 
-x = createNewStack()
+printStack(stack)
 
-clear(x)
-peek(x)
-printStack(x)
+print(peek(stack))
+pop(stack)
+pop(stack)
+push(stack, 7)
+printStack(stack)
+clear(stack)
+printStack(stack)
