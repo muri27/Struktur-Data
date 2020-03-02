@@ -1,0 +1,68 @@
+#Queue
+
+def createNewQueue():
+    q = []
+    return q
+
+def enqueue(Q, data):
+    Q.append(data)
+
+def isEmpty(Q):
+    #jika tumpukan kosaong maka True
+    #jika ada isiny maka False
+    if len(Q) == 0:
+        return True
+    else:
+        return False
+    
+def dequeue(Q):
+    if isEmpty(Q):
+        print("ERROR: STACK KOSONG")
+    else:
+        """
+        Cara Panjang
+        x = Q[0]
+        for i in range(len(Q)-1):
+            Q[i] = Q[i+1]
+        Q.pop()
+        return x
+        """
+        #Cara Pendek
+        Q.pop(0)
+        printQueue(queue)
+
+def powenqueue(Q, Y, X):
+    for i in range(Y):
+        enqueue(Q, X)
+        
+def powdequeue(Q, Y):
+    if len(Q) >= Y:
+        for i in range(Y):
+            dequeue(Q)
+        printQueue(Q)
+    else:
+        Q.clear()
+        print("ERROR: STACK KOSONG")
+        
+def printQueue(Q):
+    d = ("[ ")
+    for i in range(len(Q)):
+        d = d + Q[i] + " "
+    d = d + "]"
+    print(d)
+    
+queue = createNewQueue()
+n = int(input())
+for i in range(n):
+    masuk = input().split(" ")
+    
+    if masuk[0] == "enqueue":
+        enqueue(queue, masuk[1])
+        printQueue(queue)
+    elif masuk[0] == "dequeue":
+        dequeue(queue)
+    elif masuk[0] == "powenqueue":
+        powenqueue(queue, int(masuk[1]), masuk[2])
+        printQueue(queue)
+    elif masuk[0] == "powdequeue":
+        powdequeue(queue, int(masuk[1]))
