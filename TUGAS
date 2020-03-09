@@ -1,0 +1,135 @@
+class Node:
+    
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+    def getData(self):
+        return self.data
+    
+    def getNext(self):
+        return self.next
+    
+    def setData(self, newData):
+        self.data = newData
+        
+    def setNext(self,newNext):
+        self.next = newNext
+        
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+        
+    def isEmpty(self):
+        if self.head == None:
+            return True
+        else:
+            return False
+        
+    def insertFirst(self, data):
+        nodeBaru = Node(data)
+        nodeBaru.setNext(self.head)
+        self.head = nodeBaru
+        
+    def deleteFirst(self):
+        if self.isEmpty():
+            return None
+        else:
+            yangKeluar = self.head
+            self.head = yangKeluar.getNext()
+            return yangKeluar
+        
+    def insertLast(self, data):
+        if self.isEmpty():
+            self.insertFirst(data)
+        else:
+            p = self.head
+            while p.getNext() != None:
+                p = p.getNext()
+        
+            nodeBaru = Node(data)
+            p.setNext(nodeBaru)
+            
+    def deleteLast(self):
+        if self.isEmpty():
+            return None
+        elif self.head.getNext() == None:
+            yangKeluar = self.head
+            self.head = None
+            return yangKeluar
+        else:
+            p = self.head
+            while p.getNext().getNext() != None:
+                p = p.getNext()
+                
+            yangKeluar = p
+            p.setNext(None)
+            return yangKeluar
+            
+    def countNode(self):
+        jumlah = 0
+        p = self.head
+        while p != None:
+            p = p.getNext()
+            jumlah += 1
+        return jumlah
+    
+    def cekData(self, data):
+        p = self.head
+        while p != None:
+            if p.data == data:
+                return True
+            p = p.getNext()    
+        return False
+            
+    def cariData (self, data):
+        p = self.head
+        loop = 0
+        while p != None:
+            loop += 1
+            if (p.data == data):
+                return loop
+            p = p.getNext()
+        return -1
+  
+    def sisip (self, data, dataBaru):
+        p = self.head
+        while p.data != data:
+            p = p.getNext()
+            if p is None:
+                self.insertLast(dataBaru)
+                return True
+        nodeBaru = Node(dataBaru)   
+        nodeBaru.setNext(p.getNext())
+        p.setNext(nodeBaru)
+        
+    def deleteNode(self, dataDihapus):
+        if (self.isEmpty()):
+            return None
+        else:
+            p = self.head
+            while ((p.getNext()).data is not dataDihapus):
+                p = p.getNext()
+                if (p.getNext() is None):
+                    return False
+            
+            dataSetelah = (p.getNext()).getNext()
+            p.setNext(dataSetelah)
+        
+    def printAll(self):
+       p = self.head
+       while p != None:
+           print(p.data)
+           p = p.getNext()
+           
+           
+LL = LinkedList()
+LL.insertFirst("AZRA")
+LL.insertLast("mawar")
+LL.insertFirst("OJAN")
+LL.sisip("wkwk", "melati")
+LL.deleteNode("AZRA")
+print(LL.cekData("mawar"))
+print(LL.cariData("mawar"))
+LL.printAll()
