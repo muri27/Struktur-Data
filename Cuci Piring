@@ -1,0 +1,40 @@
+def taruh(jumlah, piring):
+    for i in range(jumlah):
+        s.append(piring)
+
+def cuci(jumlah):
+    for i in range(jumlah):
+        if (not isEmpty(s)):
+            s.pop(-1)
+        else:
+            break
+
+def isEmpty(stack):
+    return stack == []
+
+##################################################
+n = int(input())
+s = []
+hitam = []
+putih = []
+
+for i in range(n):
+    req = input()
+    perintah = req.split(" ")[0]
+        
+
+    if (perintah == "0"):
+        piring = (req.split(" ")[2])
+        jumlah = int(req.split(" ")[1])
+        taruh(jumlah, piring)
+    elif (perintah == "1"):
+        jumlah = int(req.split(" ")[1])
+        cuci(jumlah)
+        
+for i in range(len(s)):
+    if s[i] == "H":
+        hitam.append(s[i])
+    else:
+        putih.append(s[i])
+        
+print(len(hitam), len(putih), end=" ")
