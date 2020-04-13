@@ -1,0 +1,17 @@
+n = int(input())
+botol = 0
+for besar in range(5):
+    if n > 750:
+        botol += 1
+        n -= 1500
+    if botol == 5:
+        for sedang in range(7):
+            if n > 300:
+                botol += 1
+                n -= 600
+            if botol == 12:
+                for kecil in range(9):
+                    if n > 100:
+                        botol += 1
+                        n -= 200
+print(botol)
