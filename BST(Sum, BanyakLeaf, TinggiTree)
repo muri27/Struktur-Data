@@ -1,0 +1,72 @@
+class Node:
+    
+    
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
+    
+    #insert
+    def insert(self, data):
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = Node(data)
+                else:
+                    self.left.insert(data)
+            elif data > self.data:
+                if self.right is None:
+                    self.right = Node(data)
+                else:
+                    self.right.insert(data)
+        else:
+            self.data = data
+            
+    #Method mnecari banyak leaf
+    def hitungLeaf(self, root): 
+        if root is None: 
+            return 0 
+        if(root.left is None and root.right is None): 
+            return 1 
+        else: 
+            return root.hitungLeaf(root.left) + root.hitungLeaf(root.right)
+        
+    #Method menghitung tinggi tree    
+    def tinggi(self,root):
+        if root is None:
+            return 0
+        else:
+            return 1 + max(root.tinggi(root.left), root.tinggi(root.right))
+    
+    #Method sum semua node
+    def total(self, root):
+        visited = []
+        if root == None:
+            return 0
+        else:
+            if root :
+                queue = []
+                queue.append(root)
+                
+                while (len(queue) > 0):
+                    visited.append(queue[0].data)
+                    cek = queue.pop(0)
+                    if cek.left:
+                        queue.append(cek.left)
+                    if cek.right is not None:
+                        queue.append(cek.right)
+        return sum(visited)
+
+
+root = Node(4)
+root.insert(3)
+root.insert(2)
+root.insert(5)
+root.insert(6)
+root.insert(1)
+root.insert(9)
+root.insert(8)
+
+print("Banyak leaf : ", root.hitungLeaf(root))
+print("Tinggi dari tree : " , root.tinggi(root))
+print("Sum semua node : ", root.total(root))
